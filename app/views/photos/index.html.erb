@@ -1,0 +1,15 @@
+<div class = 'container'>
+    <%= link_to 'newphoto', new_photo_path, class: 'btn btn-primary'%>
+    <% @photos.each do |photo| %>
+        <% if (photo.user_id == current_user.id)%>
+            <div>
+                title:<%= photo.title %><br>
+                body:<%= photo.body %><br>
+                user_id:<%= photo.user_id%><br>
+                <%= image_tag photo.image.url, class: '' if photo.image?%>
+                <%= link_to '詳細', photo_path(photo.id) %>
+                <%= link_to '編集', edit_photo_path(photo.id) %>
+            </div>
+        <%end%>
+    <% end %>
+</div>

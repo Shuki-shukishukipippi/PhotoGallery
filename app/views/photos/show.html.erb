@@ -1,0 +1,6 @@
+<%= @photo.title %>
+<%= @photo.body %>
+<%= image_tag @photo.image.url if @photo.image? %>
+<%= link_to  "消去", photo_path(@photo.id),method: :delete %>
+
+<%= link_to 'トップに戻る',root_path %>

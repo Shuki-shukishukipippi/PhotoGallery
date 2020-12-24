@@ -1,0 +1,10 @@
+<div class = 'container'>
+<%= form_for @photo do |f| %>
+title <%= f.text_field :title,class: 'form-control' %>
+body <%= f.text_area :body,class: 'form-control' %>
+ <%= f.label :画像 %><br />
+ <%= f.file_field :image, class: "image" %>
+ 
+ <%= f.submit  '新規作成',class: 'btn btn-success float-right mt-2' %>
+<% end %>
+</div>
